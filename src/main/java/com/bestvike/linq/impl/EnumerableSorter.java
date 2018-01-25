@@ -1,7 +1,7 @@
 package com.bestvike.linq.impl;
 
 import com.bestvike.linq.function.Func1;
-import com.bestvike.linq.util.Array;
+import com.bestvike.collections.generic.Array;
 
 import java.util.Comparator;
 

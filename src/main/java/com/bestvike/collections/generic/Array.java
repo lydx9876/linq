@@ -10,7 +10,7 @@ import java.util.List;
  * Created by 许崇雷 on 2017/7/19.
  */
 @SuppressWarnings("Duplicates")
-public final class Array<T> implements Cloneable {
+public final class Array<T> implements ICollection<T>, Cloneable {
     private Object[] elements;
 
     private Array(Object[] elements) {
@@ -163,6 +163,21 @@ public final class Array<T> implements Cloneable {
 
     public List<T> toList() {
         return ArrayUtils.toList(this.elements);
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public void copyTo(T[] array, int arrayIndex) {
+
+    }
+
+    @Override
+    public void copyTo(Array<T> array, int arrayIndex) {
+
     }
 
     @Override

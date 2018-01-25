@@ -3,7 +3,7 @@ package com.bestvike.linq.impl;
 import com.bestvike.linq.IEnumerable;
 import com.bestvike.linq.exception.Errors;
 import com.bestvike.linq.function.Func1;
-import com.bestvike.linq.util.Comparer;
+import com.bestvike.collections.generic.Comparer;
 
 import java.util.Comparator;
 

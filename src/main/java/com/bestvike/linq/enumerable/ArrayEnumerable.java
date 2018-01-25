@@ -1,8 +1,10 @@
 package com.bestvike.linq.enumerable;
 
+import com.bestvike.Tuple2;
 import com.bestvike.collections.generic.Array;
 import com.bestvike.linq.IEnumerator;
 import com.bestvike.linq.IListEnumerable;
+import com.bestvike.linq.IPartition;
 import com.bestvike.linq.enumerator.ArrayEnumerator;
 
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.List;
 /**
  * Created by 许崇雷 on 2017/7/17.
  */
-public final class ArrayEnumerable<TElement> implements IListEnumerable<TElement> {
+public final class ArrayEnumerable<TElement> implements IPartition<TElement> {
     private final Array<TElement> source;
 
     public ArrayEnumerable(Array<TElement> source) {
@@ -27,7 +29,7 @@ public final class ArrayEnumerable<TElement> implements IListEnumerable<TElement
     }
 
     @Override
-    public int internalSize() {
+    public int internalSize(boolean onlyIfCheap) {
         return this.source.length();
     }
 
@@ -54,5 +56,30 @@ public final class ArrayEnumerable<TElement> implements IListEnumerable<TElement
     @Override
     public IEnumerator<TElement> enumerator() {
         return new ArrayEnumerator<>(this.source);
+    }
+
+    @Override
+    public IPartition<TElement> internalSkip(int count) {
+        return null;
+    }
+
+    @Override
+    public IPartition<TElement> internalTake(int count) {
+        return null;
+    }
+
+    @Override
+    public Tuple2<Boolean, TElement> internalTryGetElementAt(int index) {
+        return null;
+    }
+
+    @Override
+    public Tuple2<Boolean, TElement> internalTryGetFirst() {
+        return null;
+    }
+
+    @Override
+    public Tuple2<Boolean, TElement> internalTryGetLast() {
+        return null;
     }
 }

@@ -2,7 +2,7 @@ package com.bestvike.linq.iterator;
 
 import com.bestvike.linq.IEnumerable;
 import com.bestvike.linq.function.Func1;
-import com.bestvike.linq.util.Array;
+import com.bestvike.collections.generic.Array;
 import com.bestvike.linq.util.LambdaUtils;
 
 /**

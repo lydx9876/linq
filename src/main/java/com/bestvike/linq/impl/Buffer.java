@@ -1,8 +1,8 @@
 package com.bestvike.linq.impl;
 
-import com.bestvike.linq.ICollectionEnumerable;
+import com.bestvike.collections.generic.Array;
 import com.bestvike.linq.IEnumerable;
-import com.bestvike.linq.util.Array;
+import com.bestvike.linq.IIListProvider;
 import com.bestvike.linq.util.ArrayUtils;
 
 /**
@@ -15,8 +15,8 @@ public final class Buffer<TElement> {
     public Buffer(IEnumerable<TElement> source) {
         Array<TElement> items = null;
         int count = 0;
-        if (source instanceof ICollectionEnumerable) {
-            ICollectionEnumerable<TElement> collection = (ICollectionEnumerable<TElement>) source;
+        if (source instanceof IIListProvider) {
+            IIListProvider<TElement> collection = (IIListProvider<TElement>) source;
             count = collection.internalSize();
             if (count > 0)
                 items = collection.internalToArray();
